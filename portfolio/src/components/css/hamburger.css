@@ -1,0 +1,78 @@
+.hamburger-menu-wrapper {
+    width: 26px;
+    height: 20px;
+    position: relative;
+    background: #fff;
+}
+
+.hamburger-line {
+    position: absolute;
+    left: 0;
+    background: #222;
+    height: 2px;
+    transition-duration: .5s;
+}
+
+.hamburger-line:first-child {
+    top: 0;
+}
+
+.hamburger-line:first-child.opened {
+    top: 50%;
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.hamburger-line:nth-child(2) {
+    top: 50%;
+    margin-top: -1px;
+}
+
+.hamburger-line:nth-child(2).opened {
+    background-color: rgba(34, 34, 34, 0);
+}
+
+.hamburger-line:last-child {
+    bottom: 0;
+}
+
+.hamburger-line:last-child.opened {
+    bottom: 50%;
+    width: 100%;
+    -webkit-transform: translateY(50%) rotate(-45deg);
+    transform: translateY(50%) rotate(-45deg);
+}
+
+.hamburger-line-long {
+    width: 100%;
+}
+
+.hamburger-line-short {
+    width: 69%;
+}
+
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    margin: 0 -15px 0 -15px;
+    padding: 0 15px;
+    background: #f2f2f2;
+    transition-duration: .5s;
+    height: 0;
+    overflow: hidden;
+}
+
+.dropdown-menu.opened {
+    height: calc(100vh - 86px);
+}
+
+.dropdown-list {
+    padding: 15px;
+    line-height: 2.5;
+    font-size: 17px;
+    color: #222;
+}
+
+.dropdown-list:active {
+    background: #ddd;
+}

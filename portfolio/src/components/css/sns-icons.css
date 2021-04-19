@@ -1,0 +1,37 @@
+/* ボタン全体 */
+.flowbtn8:before{
+    display:none;
+}
+.flowbtn8{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#424242;/* 文字の色 */
+    border:solid 1px #424242;/* 枠線の色 */
+    background:#fff;/* 背景の色 */
+    border-radius:50%;
+    position:relative;
+    width:40px;
+    height:40px;
+    font-size:20px;
+    vertical-align:middle;
+    text-decoration:none;
+    transition:.5s;
+    margin:10px;
+}
+/* 全体ボタンマウスホバー時 */
+.flowbtn8:hover{
+    color:#fff;/* 文字の色 */
+    background:#424242;/* 背景の色 */
+}
+
+.flowbtn8 > i {
+    font-size: 20px;
+}
+
+/* ボタン全体の位置 */
+.snsbtniti{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:center;
+}

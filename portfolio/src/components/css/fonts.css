@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Square';
+    src: url('../fonts/ratio___.ttf');
+}
+
+.square-font {
+    font-family: 'Square';
+}

@@ -1,0 +1,43 @@
+{
+  "extends": "./tsconfig.paths.json",
+  "baseUrl": "./",
+  "paths": {
+    "@components": [
+      "src/components"
+    ],
+    "@functions": [
+      "src/functions"
+    ],
+    "@images": [
+      "src/images"
+    ],
+    "@pages": [
+      "src/pages"
+    ]
+  },
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "es5",
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "rootDir": "src"
+  },
+  "include": [
+    "src"
+  ]
+}

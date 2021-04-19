@@ -1,0 +1,66 @@
+/* main {
+    margin-bottom: -20px;
+} */
+
+.card-wrapper {
+    width: 100%;
+    /* background: #f8f8f8; */
+}
+
+.card-row {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-wrap: wrap;
+    width: calc(100% + 20px);
+}
+
+.card {
+    display: inline-block;
+    background :#fff;
+    border: solid 1px #ddd;
+    border-radius: 0.41667vw;
+    margin: 0 20px 20px 0;
+    width: calc(33.33333% - 20px);
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.card:link, .card:visited {
+    color: #222;
+}
+
+.col-1 {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.col-2 {
+    width: calc(50% - 20px);
+    border-radius: 10px;
+}
+
+.card .img {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.card > .img > svg {
+    height: 100px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 30px;
+    /* padding: 30px 30px 70px 30px; */
+}
