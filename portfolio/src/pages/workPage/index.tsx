@@ -34,7 +34,7 @@ export const WorkPage:React.FC = () => {
       <CardWrapper>
         {
           work.map((item: ResultProps, idx) => (
-            <CardWithImage image={'hoge'} title={item.title} link={item.link} key={idx}/>
+            <CardWithImage title={item.title} link={item.link} key={idx}/>
           ))
         }
       </CardWrapper>

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useWindowWidth } from '@react-hook/window-size'
 import {
     Layout,
+    BreadcrumbList
 } from '@/components'
 import {
     isMatch,
@@ -25,6 +26,7 @@ export const SkillDetail: React.FC<{skillname: string}> = (props) => {
     console.log(detail)
     return detail !== undefined? (
         <Layout>
+            <BreadcrumbList />
             <Wrapper isSP={ Boolean(wrapperWidth > 600) }>
                 <WrapperCore detail={detail} isPC={ Boolean(wrapperWidth > 600) } />
             </Wrapper>

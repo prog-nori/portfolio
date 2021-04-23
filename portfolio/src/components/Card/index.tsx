@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { CSSProperties, useEffect, useState } from 'react'
 import { useWindowWidth } from '@react-hook/window-size'
 import '@/components/css/card.css'
 import {
@@ -30,7 +30,7 @@ export const IconFont: React.FC<JSX.IntrinsicElements['i']> = (props) => {
             style={{
                 fontSize: '100px'
             }}
-            className={props.className}
+            className={['icon-child', props.className].join(' ')}
             />
     )
 }
@@ -51,11 +51,23 @@ const LevelStars: React.FC<{level: number}> = (props) => {
 
 export const CardWithImage: React.FC<CardWithImageImpl> = (props) => {
     const {link, title} = props
-    const image = "https://pbs.twimg.com/profile_banners/1127977589748854784/1612269330"
+    const imageIsExists = props.image? true: false
+    // const image = "https://pbs.twimg.com/profile_banners/1127977589748854784/1612269330"
     const width = useWindowWidth()
     const getCardWidth = () => (document.querySelector('.card .img')?.clientWidth)
     const [cardWidth, setCardWidth] = useState<number>(getCardWidth() || 0)
     const classes = ['card']
+    const imageStyle: CSSProperties = {
+        height: `${cardWidth}px`,
+        background: '#ddd',
+    }
+    if(imageIsExists) {
+        imageStyle.backgroundImage = `url("${props.image}")`
+    } else {
+        imageStyle.color = '#888'
+        imageStyle.fontSize = '24px'
+        imageStyle.fontWeight = 700
+    }
 
     if (width < 600) {
         classes.push('col-1')
@@ -72,10 +84,12 @@ export const CardWithImage: React.FC<CardWithImageImpl> = (props) => {
 
     return (
         <a className={classes.join(' ')} href={link}>
-            <div className='img' style={{
+            {/* <div className='img' style={{
                 height: `${cardWidth}px`,
                 backgroundImage: `url("${image}")`
-                }} />
+                }} /> */}
+            {  imageIsExists && ( <div className='img' style={imageStyle} /> ) }
+            { !imageIsExists && ( <div className='img' style={imageStyle}>Image is in preparation</div> ) }
             <div className='content'>
                 <CardTitle title={title} />
                 {/* カード下の方に、使用言語や最終更新日などを描きたい。 */}

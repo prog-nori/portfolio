@@ -10,7 +10,7 @@ type BaseType = JSX.IntrinsicElements['div'] & {
 // }
 
 export type CardWithImageImpl = BaseType & {
-    image: string
+    image?: string
     svg?: never
     font?: never
 }

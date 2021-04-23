@@ -21,12 +21,12 @@ export const routerList: RouteProps[] = [
         component: AboutPage,
     },
     {
-        path: '/skills',
-        component: SkillPage,
+        path: '/skills/:skillname',
+        component: SkillDetail,
     },
     {
-        path: '/skill/:skillname',
-        component: SkillDetail,
+        path: '/skills/',
+        component: SkillPage,
     },
     {
         path: '/work',

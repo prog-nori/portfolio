@@ -31,7 +31,7 @@
 }
 
 .col-1 {
-    width: 100%;
+    width: calc(100% - 15px);
     border-radius: 10px;
     margin: 0 0 20px 0;
 }
@@ -50,6 +50,10 @@
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+    overflow: hidden;
+}
+.img > * {
+    transition: .2s;
 }
 
 .img > svg {
@@ -64,4 +68,8 @@
     font-weight: 700;
     padding: 30px;
     /* padding: 30px 30px 70px 30px; */
+}
+
+.card:hover > .img > .icon-child, .card:hover > .img > svg {
+    transform: scale(1.5);
 }
