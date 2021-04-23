@@ -11,6 +11,10 @@ export {
 } from './skillPage'
 
 export {
+    SkillDetail
+} from './skillDetail'
+
+export {
     WorkPage
 } from './workPage/index'
 

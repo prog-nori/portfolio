@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1000px;
+    /* max-width: 900px; */
+    min-height: 350px;
+    border-radius: 15px;
+    background: #fff;
+    color: #000;
+    margin: 0 auto;
+    box-shadow: 0 5px 30px rgb(0 0 0 / 20%);
+    overflow: hidden;
+}
+
+.container.wrap {
+    flex-wrap: wrap;
+}
+
+.column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 50px;
+}
+
+.column.sp {
+    width: 100%;
+    padding: 50px 30px;
+}
+
+.main-column {
+    flex-grow: 1;
+    background: #fff;
+}
+
+.sub-column {
+    background: #303030;
+}
+
+.sub-column:not(.sp) {
+    max-width: 500px;
+    /* max-width: 400px; */
+}

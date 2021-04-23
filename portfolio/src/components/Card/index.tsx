@@ -24,7 +24,7 @@ const CardTitle: React.FC<JSX.IntrinsicElements['div'] & {title: string}> = (pro
     )
 }
 
-const IconFont: React.FC<JSX.IntrinsicElements['i']> = (props) => {
+export const IconFont: React.FC<JSX.IntrinsicElements['i']> = (props) => {
     return(
         <i
             style={{
@@ -36,23 +36,20 @@ const IconFont: React.FC<JSX.IntrinsicElements['i']> = (props) => {
 }
 
 const LevelStars: React.FC<{level: number}> = (props) => {
-    // const [stars, setStars] = useState('')
     let stars = ''
+    // #ff4785
     for(let i = 0; i < 7; i++) {
-        // setStars(stars + (props.level >= i? '★': '☆'))
         stars += (props.level >= i? '★': '☆')
     }
     return (
         <div style={{
             fontSize: '20px',
             color: 'rgb(134, 134, 139)'
-            // color: '#222'
         }}>level: {stars}</div>
     )
 }
 
 export const CardWithImage: React.FC<CardWithImageImpl> = (props) => {
-    // const {image, link, title} = props
     const {link, title} = props
     const image = "https://pbs.twimg.com/profile_banners/1127977589748854784/1612269330"
     const width = useWindowWidth()
@@ -151,8 +148,8 @@ export const CardWithFont: React.FC<CardWithFontImpl> = (props) => {
                 height: `${cardWidth}px`,
                 background: '#ddd'
                 }}>
-                    <IconFont className={font} />
-                </div>
+                <IconFont className={font} />
+            </div>
             <div className='content' style={{
                 height: `${(document.querySelector('.card')?.clientHeight || 400) - cardWidth}px`
             }}>

@@ -9,6 +9,7 @@ module.exports = {
         filename: 'main.js',
     },
     resolve: {
+        modules: [path.resolve(__dirname, 'src'), path.resolve(__dirname, 'node_modules')],
         plugins: [new TsconfigPathsPlugin(
             {
                 // tsconfig.json はデフォルト
@@ -20,7 +21,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.ts$/,
+                test: /\.(ts|tsx|png|mov)$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'ts-loader',

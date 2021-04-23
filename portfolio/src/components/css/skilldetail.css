@@ -1,0 +1,59 @@
+.img > .language-name {
+    font-size: 40px;
+    font-weight: 700;
+    color: #000;
+}
+
+div.table-wrapper {
+    margin-top: 45px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table > tbody > tr {
+    border-top: solid 1px #d2d2d7;
+}
+
+.table > tbody > tr:last-child {
+    border-bottom: solid 1px #d2d2d7;
+}
+
+.table > tbody > tr > th, .table > tbody > tr > td {
+    width: 50%;
+    line-height: 25px;
+    padding: 50px 15px;
+    text-align: left;
+}
+
+.table > tbody > tr > th span, .table > tbody > tr > td span {
+    display: block;
+    font-size: 16px;
+    color: rgb(29, 29, 31);
+    text-align: left;
+}
+
+.table > tbody > tr > th > span, .table > tbody > tr > td > span {
+    display: flex;
+    align-items: center;
+}
+
+.star {
+    margin: 0;
+}
+
+.table > tbody > tr > th > span:not(:first-child), .table > tbody > tr > td > span:not(:first-child) {
+    margin-top: 13.6px;
+}
+
+.table > tbody > tr > th, .table > tbody > tr > th span {
+    font-size: 24px;
+}
+
+.table > tbody > tr > td, .table > tbody > tr > td span{
+    word-wrap: normal;
+    /* line-break: loose; */
+    font-size: 17px;
+}

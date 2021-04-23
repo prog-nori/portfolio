@@ -11,17 +11,17 @@ export type SkillImpl = {
 type Level = {[P in 0 | 1 | 2 | 3 | 4 | 5 | 6]: string}
 type Period = Level
 
-export const levels: Level = {
+export const levels: any = {
     0: '使用経験なし',
     1: '一度触ったことがある / 授業で触ったことがある /日常的に使用できるわけではない',
     2: 'リファレンスがあれば任意の処理を実装できる(完全に理解した)',
     3: 'リファレンスがなくても任意の処理が実装できる',
-    4: '日常で問題なく利用できる。使用だけでなくライブラリやフレームワークを作ることもできる。(ナニモワカラナイ)',
+    4: '日常で問題なく利用できる。または、使用だけでなくライブラリやフレームワークを作ることもできる。(ナニモワカラナイ)',
     5: 'マスターレベル。拡張ライブラリを記述できるだけでなく言語の内部使用、処理系、実装等についても熟知している(ﾁｮｯﾄﾃﾞｷﾙ)',
     6: '神'
 }
 
-export const periods: Period = {
+export const periods: any = {
     0: '使用経験なし',
     1: '半年未満',
     2: '半年〜1年',
@@ -31,6 +31,28 @@ export const periods: Period = {
     6: '前世から使ってた'
 }
 
+// export const levels: Level = {
+//     0: '使用経験なし',
+//     1: '一度触ったことがある / 授業で触ったことがある /日常的に使用できるわけではない',
+//     2: 'リファレンスがあれば任意の処理を実装できる(完全に理解した)',
+//     3: 'リファレンスがなくても任意の処理が実装できる',
+//     4: '日常で問題なく利用できる。使用だけでなくライブラリやフレームワークを作ることもできる。(ナニモワカラナイ)',
+//     5: 'マスターレベル。拡張ライブラリを記述できるだけでなく言語の内部使用、処理系、実装等についても熟知している(ﾁｮｯﾄﾃﾞｷﾙ)',
+//     6: '神'
+// }
+
+// export const periods: Period = {
+//     0: '使用経験なし',
+//     1: '半年未満',
+//     2: '半年〜1年',
+//     3: '1年〜3年',
+//     4: '3〜5年',
+//     5: '5年以上',
+//     6: '前世から使ってた'
+// }
+
+
+// Todo: 各技術について詳細エピソードを書けるとなお良いかもしれない。
 
 /**
  * スキル統括
@@ -467,3 +489,37 @@ export const skills: SkillImpl[] = [
     //     workExperience: false
     // },
 ]
+
+type MatchData = (SkillImpl | undefined)
+
+export const getSkillname = (element: SkillImpl): string => {
+    let skillname: string = ''
+    if(Array.isArray(element.skillname)) {
+        skillname = element.skillname[0]
+    }else {
+        skillname = element.skillname
+    }
+    return skillname
+}
+
+export const isMatch = (target: string): MatchData => {
+    let result: MatchData
+    let isLoop: boolean = true
+    skills.forEach((item, idx) => {
+        const skillname = getSkillname(item).toLowerCase()
+        if(isLoop) {
+            if(skillname === target) {
+                if(target === 'c') {
+                    result = {
+                        ...skills[idx],
+                        skillname: 'clang'
+                    }
+                }else{
+                    result = skills[idx]
+                }
+                isLoop = false
+            }
+        }
+    })
+    return result
+}

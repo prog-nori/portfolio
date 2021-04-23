@@ -3,7 +3,8 @@ import {
     AboutPage,
     SkillPage,
     WorkPage,
-    ContactPage
+    ContactPage,
+    SkillDetail
 } from '../pages'
 interface RouteProps {
     path: string;
@@ -25,7 +26,7 @@ export const routerList: RouteProps[] = [
     },
     {
         path: '/skill/:skillname',
-        component: SkillPage,
+        component: SkillDetail,
     },
     {
         path: '/work',

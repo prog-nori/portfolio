@@ -20,7 +20,8 @@ export {
     CardWithImage,
     CardWithSVG,
     CardWithFont,
-    CardWrapper
+    CardWrapper,
+    IconFont
 } from './Card'
 
 export {
@@ -34,3 +35,7 @@ export {
 export {
     Footer
 } from './Footer'
+
+export {
+    MyIcon
+} from './Icon'

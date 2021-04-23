@@ -1,23 +1,14 @@
 import React from 'react'
-// import { Chart, registerables } from 'chart.js'
-// import {
-//     // Radar,
-//     Bar
-//  } from 'react-chartjs-2'
 import {
     CardWithFont,
     CardWithSVG,
-    // Card,
     Layout,
     BreadcrumbList,
-    // RaderChart,
 } from '@/components'
 import {
     SkillImpl,
-    levels,
-    periods,
     skills
-} from './data'
+} from '@/stores/data'
 
 export const SkillPage: React.FC<JSX.IntrinsicElements['main']> = (props) => {
     return (

@@ -1,9 +1,15 @@
+/**
+ * 4/23 ver1.0公開
+ */
 import * as React from "react"
-import { Layout } from "@/components"
+import {
+  Layout,
+  MyIcon
+} from "@/components"
 import "@/components/css/index.css"
 import {
   isSmartphone,
-  isnotSmartphone,
+  // isnotSmartphone,
   objectMerge,
   ifThenObjectMerge,
 }from "@/functions"
@@ -28,22 +34,6 @@ const wrapper = objectMerge(flexCenter, {
   borderRadius: '30px',
   padding: '15px',
 })
-
-const MyIcon = ({src}: {src: string}) => {
-  const icon = ifThenObjectMerge(isnotSmartphone(), {
-    width: '150px',
-    height: '150px',
-    borderRadius: '50%',
-  }, {
-    margin: '0 75px 0 0',
-  })
-
-  return (
-    <div style={flexCenter}>
-      <img src={src} style={icon} alt={'icon'} />
-    </div>
-  )
-}
 
 const View = ({children, style}: any) => {
   return (
@@ -90,7 +80,13 @@ export const IndexPage: React.FC<any> = () => {
     return (
     <Layout>
         <div style={wrapper}>
-            <MyIcon src={'https://avatars.githubusercontent.com/u/79630762?v=4'} />
+            <BrowserView style={{display: 'flex', alignItems: 'center'}}>
+              <MyIcon src={`${process.env.PUBLIC_URL}/images/me.png`} option='pc' />
+            </BrowserView>
+            <MobileView>
+              <MyIcon src={`${process.env.PUBLIC_URL}/images/me.png`} />
+            </MobileView>
+            {/* <MyIcon src={'https://avatars.githubusercontent.com/u/79630762?v=4'} /> */}
             <Introduction name="Noriki KISHI" job="An University Student"/>
         </div>
     </Layout>
